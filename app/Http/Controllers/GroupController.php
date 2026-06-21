@@ -103,7 +103,7 @@ class GroupController extends Controller
         {
             $group = Group::findOrFail($id);
             if ($group->users()->exists()) {
-                return redirect()->back()->withFailed('Cannot delete group. It is associated with one or more users.');
+                return redirect()->back()->withFailed('Cannot delete group. It is associated with users.');
             }
             else
             {

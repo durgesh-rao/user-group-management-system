@@ -45,10 +45,6 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('admin-panel/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
-    </div>
-
     <x-admin.header />
 
     <x-admin.aside />
@@ -59,12 +55,6 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h4 class="m-0">@yield('title')</h4>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            {{-- <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li> --}}
-                            <li class="breadcrumb-item active">@yield('title')</li>
-                        </ol>
                     </div>
                 </div>
             </div>
@@ -82,19 +72,6 @@
     </footer>
 
 </div>
-
-<script>
-    $('.pwd-show-btn').click(function(){
-        var type=$(this).parent().find('input').attr('type')
-        if(type=='password'){
-            $(this).addClass('fa-eye-slash').removeClass('fa-eye')
-            $(this).parent().find('input').attr('type', 'text')
-        }else{
-            $(this).removeClass('fa-eye-slash').addClass('fa-eye')
-            $(this).parent().find('input').attr('type', 'password')
-        }
-    })
-</script>
 
 
 </body>

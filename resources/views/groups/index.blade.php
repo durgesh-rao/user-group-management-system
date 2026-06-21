@@ -90,7 +90,7 @@ Groups
     }).buttons().container().appendTo('#data-table_wrapper .col-md-6:eq(0)');
 
     $('.delete-btn').click(function(evt) {
-        if (!confirm('Do you want to Trashed this Product')) {
+        if (!confirm('Do you want to Trashed this group')) {
             evt.preventDefault()
         }
     })

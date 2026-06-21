@@ -82,7 +82,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'name'=>'required','string','max:255','min:3',
+            'label'=>'required','string','max:255','min:3',
             'mobile'=>'required|numeric|digits:10|regex:/^[5-9]{1}[0-9]{9}+$/',
             'groups'=>'required'
         ];
