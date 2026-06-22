@@ -35,9 +35,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'label'=>['required','string','max:255','min:3'],
+            'label'=>'required|string|max:255|min:3',
             'mobile'=>'required|numeric|digits:10|regex:/^[6-9]{1}[0-9]{9}+$/',
-            'groups'=>'required'
+            'groups'=>'required|array'
         ];
 
         $this->validate($request, $rules);
@@ -82,9 +82,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'label'=>'required','string','max:255','min:3',
+            'label'=>'required|string|max:255|min:3',
             'mobile'=>'required|numeric|digits:10|regex:/^[5-9]{1}[0-9]{9}+$/',
-            'groups'=>'required'
+            'groups'=>'required|array'
         ];
 
         $this->validate($request, $rules);
@@ -144,11 +144,11 @@ class UserController extends Controller
     {
         if($id)
         {
-            $user = User::with('group')->withTrashed()->find($id);
+            $user = User::with('groups')->withTrashed()->find($id);
             if($user)
             {
                 $user->restore();
-                return redirect('/group')->withSuccess('User Successfully restore');
+                return redirect('/users')->withSuccess('User Successfully restore');
             }
 
         }

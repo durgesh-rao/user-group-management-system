@@ -26,13 +26,13 @@
                 <li class="nav-item">
                     <a href="{{ route('group.index') }}" class="nav-link">
                         <i class="fas fa-bars nav-icon"></i>
-                        <p>Add Group</p>
+                        <p>Groups</p>
                     </a>
                 </li> 
                 <li class="nav-item">
                     <a href="{{ route('users.index') }}" class="nav-link">
-                        <i class="fas fa-bars nav-icon"></i>
-                        <p>Add User</p>
+                        <i class="fas fa-solid fa-users"></i>
+                        <p>Users</p>
                     </a>
                 </li>
             </ul>

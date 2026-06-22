@@ -21,9 +21,6 @@ class GroupController extends Controller
         return view('groups.form');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $rules = [
